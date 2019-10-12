@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Spectrum Protocol</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#fff">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="static/dashboard_main.min.css">
+
+</head>
+
+<body>
+
+	<div class="preloader"></div>
+
+	<div class="wrapper">
+
+		<header class="header">
+
+			<div class="inner-col">
+				<div class="btn-menu btn-menu--left">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+
+		
+			<div class="inner-row align-right">
+
+				<div class="d-none d-md-block">
+					<div class="user">
+						<p class="user__name">
+							<a href="{{ url_for('logout') }}"> logout </a>
+						</p>
+					</div>
+				</div>
+
+				<div class="btn-menu btn-menu--right">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+
+			</div>
+
+		</header>
+
+		<div class="content">
+			<aside class="sidebar">
+				<div class="sidebar__close-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="16" viewBox="0 0 15 16"><defs><path id="hy9fa" d="M294.49 17.58L307.92 31l-1.41 1.41L293.08 19z"/><path id="hy9fb" d="M293.08 31.01l13.43-13.43 1.41 1.41-13.43 13.43z"/></defs><g><g transform="translate(-293 -17)"><use fill="#aeaeae" xlink:href="#hy9fa"/></g><g transform="translate(-293 -17)"><use fill="#aeaeae" xlink:href="#hy9fb"/></g></g></svg>
+				</div>
+				<!--
+				<a href="" class="logo">
+					<img class="logo__img" src="img/logo.png" alt="">
+					<span class="logo__text">Spectrum Protocol</span>
+				</a>
+				-->
+
+				<ul class="menu">
+
+				{% if title == 'Blockchain' %}
+					<li class="menu__item active">
+				{% else %}
+					<li class="menu__item">
+				{% endif %}
+						<a class="menu__link" href="{{ url_for('home') }}">
+							<span class="menu__link-icon">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									width="15px" height="15px" viewBox="120.5 14.5 15 15" style="enable-background:new 120.5 14.5 15 15;" xml:space="preserve">
+							   
+									   <path d="M133.921,18.447L123.658,14.5c-0.872,0-1.579,0.707-1.579,1.579v2.368
+										   c-0.872,0-1.579,0.707-1.579,1.579v7.895c0,0.872,0.707,1.579,1.579,1.579h11.842c0.872,0,1.579-0.707,1.579-1.579v-7.895
+										   C135.5,19.154,134.793,18.447,133.921,18.447z M123.657,17.088c0.001-0.436,0.354-0.789,0.79-0.788l5.526,2.146h-6.316V17.088z
+											M133.921,27.13c0,0.436-0.354,0.79-0.79,0.79h-10.263c-0.436-0.001-0.789-0.354-0.789-0.79v-6.315
+										   c0-0.436,0.353-0.789,0.789-0.79h10.263c0.436,0,0.79,0.354,0.79,0.79V27.13z M124.842,23.183h-0.79
+										   c-0.217,0.003-0.392,0.178-0.395,0.395v0.789c0.003,0.217,0.178,0.392,0.395,0.395h0.79v0.001
+										   c0.217-0.003,0.393-0.179,0.395-0.396v-0.789C125.234,23.361,125.059,23.186,124.842,23.183z"/>
+							   </svg>
+							</span>
+							<span class="menu__link-text">
+								Blockchain
+							</span>
+						</a>
+					</li>
+
+				{% if title == 'Nodes' %}
+					<li class="menu__item active">
+				{% else %}
+					<li class="menu__item">
+				{% endif %}
+						<a class="menu__link" href="{{ url_for('nodes') }}">
+							<span class="menu__link-icon">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									width="18px" height="16px" viewBox="-12 15 18 16" style="enable-background:new -12 15 18 16;" xml:space="preserve">
+									   <path d="M6,19.557L-3,15l-9,4.557l9,4.318L6,19.557z M-3,16.681l5.608,2.84L-3,22.211l-5.608-2.69
+										   L-3,16.681z M2.561,26.668L-3,29.336l-5.561-2.668h-3.412L-12,26.682L-3,31l9-4.318l-0.027-0.014H2.561z M2.561,23.106L-3,25.774
+										   l-5.561-2.668h-3.412L-12,23.12l9,4.318l9-4.318l-0.027-0.014C5.973,23.106,2.561,23.106,2.561,23.106z"/>
+							   </svg>
+							</span>
+							<span class="menu__link-text">
+								Peer Nodes
+							</span>
+						</a>
+					</li>
+					<li class="menu__item">
+						<a class="menu__link popup-link" href="#benchmark__popup">
+							<span class="menu__link-icon">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									width="18px" height="18px" viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
+									   <path d="M9,6C7.343,6,6,7.343,6,9c0,1.657,1.343,3,3,3c1.657,0,3-1.343,3-3C12,7.343,10.657,6,9,6z M9,10.5
+										   c-0.828,0-1.5-0.672-1.5-1.5S8.172,7.5,9,7.5s1.5,0.672,1.5,1.5S9.828,10.5,9,10.5z M15.75,6.75h-1.32l0.93-0.93
+										   c0.847-0.909,0.797-2.333-0.112-3.18c-0.864-0.805-2.203-0.805-3.068,0l-0.93,0.93V2.25C11.25,1.007,10.243,0,9,0
+										   C7.757,0,6.75,1.007,6.75,2.25v1.32L5.82,2.625C4.911,1.778,3.487,1.828,2.64,2.737c-0.805,0.864-0.805,2.203,0,3.068l0.93,0.93
+										   H2.25C1.007,6.735,0,7.742,0,8.985c0,1.243,1.007,2.25,2.25,2.25h1.32L2.625,12.18c-0.847,0.909-0.797,2.333,0.112,3.18
+										   c0.864,0.805,2.203,0.805,3.068,0l0.93-0.93v1.32c0,1.243,1.007,2.25,2.25,2.25c1.243,0,2.25-1.007,2.25-2.25v-1.32l0.93,0.93
+										   c0.909,0.847,2.333,0.797,3.18-0.112c0.805-0.864,0.805-2.203,0-3.068l-0.93-0.93h1.32c1.243,0.008,2.257-0.992,2.265-2.235V9
+										   C18,7.757,16.993,6.75,15.75,6.75z M15.75,9.75h-1.56c-0.125,0.868-0.465,1.69-0.99,2.393l1.102,1.102
+										   c0.269,0.315,0.233,0.788-0.082,1.057c-0.281,0.241-0.695,0.241-0.976,0L12.142,13.2c-0.702,0.525-1.525,0.865-2.393,0.99v1.56
+										   c0,0.414-0.336,0.75-0.75,0.75s-0.75-0.336-0.75-0.75v-1.56c-0.868-0.125-1.69-0.465-2.393-0.99l-1.102,1.102
+										   c-0.315,0.269-0.788,0.233-1.057-0.082c-0.241-0.281-0.241-0.695,0-0.976l1.102-1.102c-0.525-0.702-0.865-1.525-0.99-2.393h-1.56
+										   c-0.414,0-0.75-0.336-0.75-0.75s0.336-0.75,0.75-0.75h1.56c0.125-0.868,0.465-1.69,0.99-2.393L3.697,4.754
+										   C3.428,4.439,3.464,3.966,3.779,3.697c0.281-0.241,0.695-0.241,0.976,0l1.102,1.102c0.702-0.525,1.525-0.865,2.393-0.99v-1.56
+										   c0-0.414,0.336-0.75,0.75-0.75s0.75,0.336,0.75,0.75v1.56c0.868,0.125,1.69,0.465,2.393,0.99l1.102-1.102
+										   c0.315-0.269,0.788-0.233,1.057,0.082c0.241,0.281,0.241,0.695,0,0.976L13.2,5.857c0.525,0.702,0.865,1.525,0.99,2.393h1.56
+										   c0.414,0,0.75,0.336,0.75,0.75S16.164,9.75,15.75,9.75z"/>
+							   </svg>
+							</span>
+							<span class="menu__link-text">
+								Benchmark
+							</span>
+						</a>
+					</li>
+				</ul>
+
+				<div class="ip__address">
+						<a class="popup-link" href="#about__popup">
+						About
+						</a>
+				</div>
+
+				<div class="copyright">
+					© 2019 telecomsteve
+				</div>
+
+			</aside>
+
+			<main class="main-content">
+                {% block content %} {% endblock %}
+			</main>
+		</div>
+
+	</div>
+
+	<div class="d-none">
+
+			<div class="d-none">
+	
+				<form action="{{ url_for('home') }}" method="POST" class="popup popup-add-wallet zoom-anim-dialog" id="new__contract__popup">
+					<div class="popup__content">
+
+						<h3>New Contract</h3>
+	
+						<div class="popup-add-wallet__row">
+		
+							<div class="input-wrap">
+								<input type="text" name="ssid" placeholder="Network SSID">
+							</div>
+							
+						</div>
+	
+						<div class="popup-add-wallet__row">
+								<select name="spectrum_block" class="custom-select">
+									<option value="5Ghz Bands">5Ghz Bands</option>
+									<option value="60Ghz Bands">60Ghz Bands</option>
+								</select>
+								
+						</div>
+		
+						<button type="submit" class="btn btn--blue btn--full">Add Contract</button>
+					</div>
+					<div class="popup__thanks">
+						<img src="img/popup-success.png" alt="">
+						<h3>Contract added successfully!</h3>
+					</div>
+				</form>
+		
+			</div>
+	
+		</div>
+
+		<div class="d-none">
+
+				<div class="d-none">
+		
+					<form action="{{ url_for('home') }}" method="POST" class="popup popup-add-wallet zoom-anim-dialog" id="existing__contract__popup">
+						<div class="popup__content">
+							
+							<h3>Existing contract</h3>
+		
+							<div class="popup-add-wallet__row">
+			
+								<div class="input-wrap">
+									<input type="text"  name="contract_id" placeholder="Contract ID">
+								</div>
+								
+							</div>
+
+
+							<div class="popup-add-wallet__row">
+										
+									<select name="peer_ip" class="custom-select">
+
+										{% for peer in peers_full %}
+										<option value="{{peer.ip}}">Peer IP: {{peer.ip}}</option>
+										{% endfor %}
+
+									</select>
+									
+							</div>
+			
+							<button type="submit" class="btn btn--blue btn--full">Add Contract</button>
+						</div>
+						<div class="popup__thanks">
+							<img src="img/popup-success.png" alt="">
+							<h3>Contract added successfully!</h3>
+						</div>
+					</form>
+			
+				</div>
+		
+			</div>
+
+			<div class="d-none">
+
+					<div class="d-none">
+			
+						<form action="{{ url_for('home') }}" method="POST" class="popup popup-add-wallet zoom-anim-dialog" id="new__block">
+							<div class="popup__content">
+		
+								<h3>New Block</h3>
+			
+								<div class="popup-add-wallet__row">
+				
+									<div class="input-wrap">
+										<input type="text"  name="host_id" placeholder="Host ID">
+									</div>
+									
+								</div>
+
+								<div class="popup-add-wallet__row">
+										
+										<select name="contract_id" class="custom-select">
+
+											{% for contract in contracts_full %}
+											<option value="{{contract.contract_id}}">Contract ID: {{contract.contract_id}}</option>
+											{% endfor %}
+
+										</select>
+										
+								</div>
+
+								<div class="popup-add-wallet__row">
+										
+										<select name="permission" class="custom-select">
+											<option value="allow">Allow</option>
+											<option value="deny">Deny</option>
+										</select>
+										
+								</div>
+
+								{% for item in about %}
+								<input type="hidden"  name="my_hostid" value="{{id}}">
+								{% endfor %}
+
+								<button type="submit" class="btn btn--blue btn--full">Add Block</button>
+							</div>
+							<div class="popup__thanks">
+								<img src="img/popup-success.png" alt="">
+								<h3>Block added successfully!</h3>
+							</div>
+						</form>
+				
+					</div>
+			
+				</div>
+
+		<div class="d-none">
+
+				<div class="d-none">
+		
+					<form class="popup popup-add-wallet zoom-anim-dialog" id="about__popup">
+						<div class="popup__content">
+							
+							<h3>System Information</h3>
+
+							
+
+							<div class="popup-add-wallet__row">
+	
+									<div class="host__identity">IP Address: {{ip}}</div>
+									
+							</div>
+
+							<div class="popup-add-wallet__row">
+	
+									<div class="host__identity">Peer Key: {{id}}</div>
+									
+							</div>
+
+							{% for item in about %}
+
+							<div class="popup-add-wallet__row">
+	
+									<div class="host__identity">Software Version: {{item.version}}</div>
+									
+							</div>
+
+							<div class="popup-add-wallet__row">
+	
+									<div class="host__identity">Author: {{item.author}} </div>
+									
+							</div>
+
+							<div class="popup-add-wallet__row">
+	
+									<div class="host__identity">Location: {{item.location}}</div>
+									
+							</div>
+							
+							{% endfor %}
+
+						</div>
+					</form>
+			
+				</div>
+		
+			</div>
+
+            <div class="d-none">
+
+                <div class="d-none">
+        
+                    <form action="{{ url_for('nodes') }}" method="POST" class="popup popup-add-wallet zoom-anim-dialog" id="add-peer">
+                        <div class="popup__content">
+                            
+                            <h3>New Peer</h3>
+        
+                            <div class="popup-add-wallet__row">
+                                <div class="input-wrap">
+                                    <input type="text"  name="peer_hostid" placeholder="Peer Key">
+                                </div>
+                            </div>
+        
+                            <div class="popup-add-wallet__row">
+                                <div class="input-wrap">
+                                    <input type="text" name="peer_ip" placeholder="Peer IP">
+                                </div>
+                            </div>
+        
+                            <div class="popup-add-wallet__row">
+                                    
+                                <select name="allowed_contract" class="custom-select">
+									{% for contract in contracts_full %}
+									<option value="{{contract.contract_id}}">Contract ID: {{contract.contract_id}}</option>
+									{% endfor %}
+                                </select>
+                                    
+                            </div>
+            
+                            <button type="submit" class="btn btn--blue btn--full">Add Peer</button>
+                        </div>
+                        <div class="popup__thanks">
+                            <img src="img/popup-success.png" alt="">
+                            <h3>Peer added successfully!</h3>
+                        </div>
+                    </form>
+            
+                </div>
+        
+            </div>
+
+			<div class="d-none">
+
+					<div class="d-none">
+			
+						<form action="{{ url_for('home') }}" method="POST" class="popup popup-add-wallet zoom-anim-dialog" id="benchmark__popup">
+							<div class="popup__content">
+								
+								<h3>Benchmark</h3>
+			
+								<div class="popup-add-wallet__row">
+										
+										<select name="tps" class="custom-select">
+											<option value="1_tps">1 Transactions Per Second</option>
+											<option value="10_tps">10 Transactions Per Second</option>
+											<option value="20_tps">20 Transactions Per Second</option>
+											<option value="50_tps">50 Transactions Per Second</option>
+											<option value="100_tps">100 Transactions Per Second</option>
+											<option value="1000_tps">1000 Transactions Per Second</option>
+										</select>
+										
+								</div>
+
+								<div class="popup-add-wallet__row">
+										
+										<select name="total_transactions" class="custom-select">
+											<option value="1_blocks">1 Transactions</option>
+											<option value="10_blocks">10 Transactions</option>
+											<option value="100_blocks">100 Transactions</option>
+											<option value="1000_blocks">1000 Transactions</option>
+											<option value="10000_blocks">10000 Transactions</option>
+											<option value="100000_blocks">100000 Transactions</option>
+											<option value="1000000_blocks">1000000 Transactions</option>
+
+										</select>
+										
+								</div>
+			
+								<div class="popup-add-wallet__row">
+										
+										<select name="allowed_contract" class="custom-select">
+											{% for contract in contracts_full %}
+											<option value="{{contract.contract_id}}">Contract ID: {{contract.contract_id}}</option>
+											{% endfor %}
+										</select>
+										
+								</div>
+				
+								<button type="submit" class="btn btn--blue btn--full">Run Benchmark</button>
+							</div>
+							<div class="popup__thanks">
+								<img src="img/popup-success.png" alt="">
+								<h3>Benchmark started successfully!</h3>
+							</div>
+						</form>
+				
+					</div>
+			
+				</div>
+
+	<script src="static/jquery-2.2.4.min.js"></script>
+	<script src="static/scripts.min.js"></script>
+
+</body>
+</html>

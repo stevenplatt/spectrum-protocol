@@ -1,0 +1,141 @@
+{% extends "dashboard_layout.html" %}
+{% block content %}
+	<section class="wallets">
+		<div class="transactions__header">
+				<h2>Spectrum Contracts</h2>
+		</div>
+		<div class="page__numbers">
+			<span class="transaction__data">Page</span> 
+			{% for page_num in contracts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+			{% if page_num %}
+				{% if contract_page == page_num %}
+				<a href="{{ url_for('home', contract_page=page_num) }}">{{ page_num }}</a>
+				{% else %}
+				<a class="transaction__data" href="{{ url_for('home', contract_page=page_num) }}">{{ page_num }}</a>
+				{% endif %}
+			{% else %}
+			...
+			{% endif%}
+			{% endfor %}
+		</div>
+
+
+		<div class="wallets__list">
+
+			{% for contract in contracts.items %}
+
+				{% if contract.spectrum_block == "5Ghz Bands" %}
+					<a class="wallet" style="background-color: #f29f3f;">
+				
+				{% else %}
+					<a class="wallet" style="background-color: #707bcc;">
+
+				{% endif %}
+
+					<span class="wallet__header">
+						<span class="wallet__currency">
+							<span class="wallet__currency-info">
+								<span>SSID: {{contract.ssid}}</span>
+								<span>Spectrum: {{contract.spectrum_block}}</span>
+							</span>
+						</span>
+
+						<span class="wallet__course">
+							<span></span>
+							<span></span>
+						</span>
+					</span>
+
+					<span class="wallet__footer">
+						<span>ID: {{contract.contract_id}}  </span>
+						<span>{{contract.peer_count}} 0 Peers</span>
+					</span>
+				</a>
+
+			{% endfor %}
+
+
+			<a href="#new__contract__popup" class="wallet add-wallet popup-link">
+				<span class="add-wallet__icon">
+					<img src="static/add_contract_icon.png" alt="">
+				</span>
+				<span class="add-wallet__text">
+					New Contract
+				</span>
+			</a>
+			
+			<a href="#existing__contract__popup" class="wallet add-wallet popup-link">
+				<span class="add-wallet__icon">
+					<img src="static/add_contract_icon.png" alt="">
+				</span>
+				<span class="add-wallet__text">
+					Existing Contract
+				</span>
+			</a>
+
+		</div>
+
+	</section>
+
+	<section class="transactions">
+
+		<div class="transactions__header">
+			<h3>Block Activity</h3>
+			<a class="popup-link" href="#new__block">add block</a>
+		</div>
+		<div class="transactions__list">
+
+			{% for block in blocks.items %}
+			<div class="transaction ">
+
+				<div class="transaction__header transaction__header--five-cols">
+					<div class="transaction__data">
+							{{ block.time_stamp }}
+					</div>
+
+					<div class="transaction__currency">
+						Sender Key: {{ block.creator }}
+					</div>
+
+					<div class="transaction__info">
+						Host ID: {{ block.host_id }}
+					</div>
+
+					<div class="transaction__status">
+						Contract ID: {{ block.contract }}
+					</div>
+
+					<div class="transaction__status">
+						{% if block.block_action == "allow" %}
+						<div class="status status--allow">
+							{{ block.block_action }}
+						</div>
+						{% else %}
+						<div class="status status--deny">
+							{{ block.block_action }}
+						</div>
+						{% endif %}
+					</div>
+
+				</div>						
+
+			</div>
+			{% endfor %}
+		</div>
+		<div class="page__numbers">
+			<span class="transaction__data">Page</span>
+			{% for page_num in blocks.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+				{% if page_num %}
+					{% if block_page == page_num %}
+					<a href="{{ url_for('home', block_page=page_num) }}">{{ page_num }}</a>
+					{% else %}
+					<a class="transaction__data" href="{{ url_for('home', block_page=page_num) }}">{{ page_num }}</a>
+					{% endif %}
+				{% else %}
+				...
+				{% endif%}
+			{% endfor %}
+			</div>
+	</section>
+
+{% endblock content %}

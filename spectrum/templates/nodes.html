@@ -1,0 +1,58 @@
+{% extends "dashboard_layout.html" %}
+{% block content %}
+	<section class="transactions">
+
+		<div class="transactions__header">
+			<h2>Peer Nodes</h2>
+			<a class="popup-link" href="#add-peer">add peer</a>
+		</div>
+		<div></div>
+		<div class="transactions__list">
+
+				{% for peer in peers.items %}
+				<div class="transaction ">
+
+					<div class="transaction__header transaction__header--five-cols">
+						<div class="transaction__data">
+								Last Active: unknown {{ peer.last_active }}
+						</div>
+
+						<div class="transaction__currency">
+								Peer IP: {{ peer.ip }}
+						</div>
+
+						<div class="transaction__info">
+							Peer Key: {{ peer.public_key }}
+						</div>
+
+						<div class="transaction__status">
+							Contract ID: {{ peer.contract }}
+						</div>
+
+						<div class="transaction__status">
+							<div class="status status--pending">
+								Inactive {{ peer.status }}
+							</div>
+						</div>
+
+					</div>						
+
+				</div>
+				{% endfor %}
+		</div>
+				<div class="page__numbers">
+					<span class="transaction__data">Page</span>
+					{% for page_num in peers.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+					{% if page_num %}
+						{% if peer_page == page_num %}
+						<a href="{{ url_for('nodes', peer_page=page_num) }}">{{ page_num }}</a>
+						{% else %}
+						<a class="transaction__data" href="{{ url_for('nodes', peer_page=page_num) }}">{{ page_num }}</a>
+					{% endif %}
+					{% else %}
+					...
+					{% endif%}
+					{% endfor %}
+				</div>
+	</section>
+{% endblock content %}

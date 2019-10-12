@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum Protocol</title>
+    <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="static/login_style.css">
+    <link rel="stylesheet" type="text/css" href="static/login_theme.css">
+
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#0093FF">
+	<!-- Custom Browsers Color End -->
+
+</head>
+<body>
+    <div class="form-body">
+        <div class="website-logo">
+            <a href="index.html">
+                <div class="logo">
+                <!-- LOGO PLACEHOLDER 
+                    <img class="logo-size" src="images/logo-light.svg" alt="">
+                -->
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="static/login_lock.svg" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>login</h3>
+                        <p>Access to Spectrum Protocol blockchain explorer and admin pages.</p>
+                        <form action="/login" method="POST">
+                            <input class="form-control" type="text" value="" name="username" placeholder="Username" required>
+                            <input class="form-control" type="password" value="" name="password" placeholder="Password" required>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="static/jquery.min.js"></script>
+<script src="static/popper.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
+<script src="static/login_main.js"></script>
+</body>
+</html>
