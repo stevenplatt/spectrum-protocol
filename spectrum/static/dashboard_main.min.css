@@ -5988,6 +5988,11 @@ h4 {
     padding: 3% 5% 3% 5%
 }
 
+.map__main {
+    background-color: #fff;
+    padding: 3% 3% 3% 3%
+}
+
 .transactions__header {
     display: -webkit-box;
     display: -webkit-flex;

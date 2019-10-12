@@ -77,6 +77,11 @@ def home():
         return render_template('dashboard.html', title='Blockchain', blocks=block_list, about=about, ip=my_ip, id=my_id, contracts=contract_list, 
         contracts_full=contract_list_full, peers_full=peer_list_full, block_page=block_page, contract_page=contract_page)
 
+@app.route("/map")
+def map():
+
+        return render_template('map.html', title='Map')
+
 @app.route("/nodes", methods=["GET", "POST"])
 def nodes():
 
